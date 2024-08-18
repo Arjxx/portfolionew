@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100vh Scroll Test</title>
+    <style>
+        /* Basic styling for demonstration */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Hide scrollbar */
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+            text-align: center;
+        }
+
+        .section1 {
+            background-color: #3498db;
+        }
+
+        .section2 {
+            background-color: #e74c3c;
+        }
+
+        .section3 {
+            background-color: #2ecc71;
+        }
+
+        main {
+            height: 100vh;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-snap-align: start;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="section1">
+            Section 1
+        </section>
+        <section class="section2">
+            Section 2
+        </section>
+        <section class="section3">
+            Section 3
+        </section>
+    </main>
+
+    <script>
+        let currentSection = 0;
+        const sections = document.querySelectorAll("section");
+
+        function scrollToSection(index) {
+            sections[index].scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.addEventListener('wheel', function(event) {
+            event.preventDefault();
+
+            if (event.deltaY > 0 && currentSection < sections.length - 1) {
+                currentSection++;
+                scrollToSection(currentSection);
+            } else if (event.deltaY < 0 && currentSection > 0) {
+                currentSection--;
+                scrollToSection(currentSection);
+            }
+        }, { passive: false });
+    </script>
+
+</body>
+</html>

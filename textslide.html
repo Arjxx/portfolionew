@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Slider</title>
+    <style>
+        .slider-container {
+            width: auto;
+            height: 70px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .info {
+            width: 100%;
+            text-align: center;
+            line-height: 5px;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            font-size: 4rem;
+        }
+        .slide.active {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <p>Hi</p>
+        <p>I am Arjun Suresh,</p>
+        <p>and I am a</p>
+    </div>
+
+    <div class="slider-container">
+        <div class="slide">Developer</div>
+        <div class="slide">Designer</div>
+        <div class="slide">Programmer</div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 1500);
+
+        // Initialize the first slide
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Slider</title>
+    <style>
+        .slider-container {
+            width: auto;
+            height: 70px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .info {
+            width: 100%;
+            text-align: center;
+            line-height: 5px;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            font-size: 4rem;
+        }
+        .slide.active {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <p>Hi</p>
+        <p>I am Arjun Suresh,</p>
+        <p>and I am a</p>
+    </div>
+
+    <div class="slider-container">
+        <div class="slide">Developer</div>
+        <div class="slide">Designer</div>
+        <div class="slide">Programmer</div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        const interval = setInterval(() => {
+            showSlide(currentSlide);
+            currentSlide++;
+
+            // Stop the interval when all slides have been shown
+            if (currentSlide >= slides.length) {
+                clearInterval(interval);
+            }
+        }, 1500);
+
+        // Initialize the first slide
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>

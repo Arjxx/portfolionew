@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Infinite Logo Slider</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .logo-slider {
+            width: 100%;
+            overflow: hidden;
+            background-color: #ffffff;
+            padding: 10px 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .slider-track {
+            display: flex;
+            width: max-content;
+            animation: scroll 20s linear infinite;
+        }
+
+        .slide {
+            width: 200px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .slide img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="logo-slider">
+    <div class="slider-track">
+        <div class="slide"><img src="logo1.png" alt="Logo 1"></div>
+        <div class="slide"><img src="logo2.png" alt="Logo 2"></div>
+        <div class="slide"><img src="logo3.png" alt="Logo 3"></div>
+        <div class="slide"><img src="logo4.png" alt="Logo 4"></div>
+        <div class="slide"><img src="logo5.png" alt="Logo 5"></div>
+        <!-- Duplicate the logos to ensure smooth loop -->
+        <div class="slide"><img src="logo1.png" alt="Logo 1"></div>
+        <div class="slide"><img src="logo2.png" alt="Logo 2"></div>
+        <div class="slide"><img src="logo3.png" alt="Logo 3"></div>
+        <div class="slide"><img src="logo4.png" alt="Logo 4"></div>
+        <div class="slide"><img src="logo5.png" alt="Logo 5"></div>
+    </div>
+</div>
+
+</body>
+</html>

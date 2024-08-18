@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="slider-container">
+        <div class="slide">Hi welcome</div>
+      </div>
+    </div>
+    <nav id="nav">
+      <div class="navbar" id="navbar">
+        <div class="logo">ARJUN</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#box-container" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link dropdown">More <span>&#11167;</span></a>
+            <ul class="nav-dropdown">
+              <li>dsfsd</li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link dropdown">Home</a>
+            <ul class="nav-dropdown">
+              <li>more</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- card  -->
+    <div class="container">
+      <div class="section-heading"><h2>What I Do</h2></div>
+      <div class="card-container">
+        <div class="card active">
+          <div
+            class="card-before"
+            style="
+              background-image: url('https://wallpaper.forfun.com/fetch/cd/cd975f9b1bc1a2f35629f88b63d0c24b.jpeg');
+            "
+          ></div>
+          <div class="card-content">
+            <h2 class="card-title">Web</h2>
+            <h3 class="card-subtitle">Developer</h3>
+          </div>
+          <div class="card-description">
+            Description for Card 1. It slides in from the right.
+          </div>
+          <div class="card-link">
+            <a href="#">More</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div
+            class="card-before"
+            style="
+              background-image: url('https://i0.wp.com/backgroundabstract.com/wp-content/uploads/edd/2022/01/gradient-network-connection-background_23-2148865392-e1656081168680.jpg?fit=626%2C417&ssl=1');
+            "
+          ></div>
+          <div class="card-content">
+            <h2 class="card-title">SEO</h2>
+            <h3 class="card-subtitle">Subtitle 2</h3>
+          </div>
+          <div class="card-description">
+            Description for Card 2. It slides in from the right.
+          </div>
+          <div class="card-link">
+            <a href="#">More</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div
+            class="card-before"
+            style="
+              background-image: url('https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/01/Google-Wallpapers-00047.png');
+            "
+          ></div>
+          <div class="card-content">
+            <h2 class="card-title">Graphic</h2>
+            <h3 class="card-subtitle">Subtitle 3</h3>
+          </div>
+          <div class="card-description">
+            Description for Card 3. It slides in from the right.
+          </div>
+          <div class="card-link">
+            <a href="#">More</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div
+            class="card-before"
+            style="
+              background-image: url('https://img.freepik.com/free-vector/realistic-background-futuristic-style_23-2149129125.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1723939200&semt=ais_hybrid');
+            "
+          ></div>
+          <div class="card-content">
+            <h2 class="card-title">Video</h2>
+            <h3 class="card-subtitle">Subtitle 4</h3>
+          </div>
+          <div class="card-description">
+            Description for Card 4. It slides in from the right.
+          </div>
+          <div class="card-link">
+            <a href="#">More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- sliding divs  -->
+    <div class="box">
+      <div class="inner-box">
+        <div class="section"><h2>Sliding Text Example</h2></div>
+      </div>
+      <div class="box-container" id="box-container">
+        <div class="box1 box-item">
+          <div class="image-placeholder">Laptop</div>
+        </div>
+        <div class="box2 box-item">
+          <div class="image-placeholder">Coding Book</div>
+        </div>
+        <div class="box3 box-item">
+          <div class="image-placeholder">Ship</div>
+        </div>
+      </div>
+    </div>
+    <!-- about  -->
+    <!-- <section>
+      <div class="container">
+        <div class="about-container">
+          <div class="col">asds</div>
+          <div class="col">sadsfg</div>
+        </div>
+      </div>
+    </section> -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const loader = document.getElementById("loader");
+        const navbar = document.getElementById("navbar");
+        const hi = document.querySelector(".slide");
+
+        hi.classList.add("active");
+        // Hide loader after 10 seconds
+        setTimeout(() => {
+          loader.style.height = "0px";
+          loader.style.opacity = "0";
+        }, 3000);
+
+        // Show and animate navbar after 11 seconds
+        setTimeout(() => {
+          navbar.style.opacity = "1";
+          navbar.style.transform = "translateY(0)";
+        }, 4000);
+        ///////scroll box
+      });
+
+      // cards
+
+      // const cards = document.querySelectorAll(".card");
+
+      // cards.forEach((card) => {
+      //   card.addEventListener("click", () => {
+      //     if (card.classList.contains("active-fullscreen")) {
+      //       card.classList.remove("active-fullscreen");
+      //       document.body.style.overflowY = "scroll";
+      //     } else {
+      //       document
+      //         .querySelectorAll(".card")
+      //         .forEach((c) => c.classList.remove("active-fullscreen"));
+      //       card.classList.add("active-fullscreen");
+      //       document.body.style.overflowY = "hidden";
+      //     }
+      //   });
+      // });
+
+//       const boxContainer = document.querySelector('.box');
+
+// boxContainer.addEventListener('mousemove', (e) => {
+//     const { offsetWidth: width, offsetHeight: height } = boxContainer;
+//     const { clientX: x, clientY: y } = e;
+
+//     // Calculate the position of the mouse inside the boxContainer
+//     const moveX = ((x / width) - 0.5) * 30;
+//     const moveY = ((y / height) - 0.5) * -30;
+
+//     // Apply the transform to each box-item
+//     const boxItems = document.querySelectorAll('.box-item');
+//     boxItems.forEach(box => {
+//         box.style.transform = `rotateY(${moveX}deg) rotateX(${moveY}deg)`;
+//     });
+// });
+
+// boxContainer.addEventListener('mouseleave', () => {
+//     const boxItems = document.querySelectorAll('.box-item');
+//     boxItems.forEach(box => {
+//         box.style.transform = 'rotateY(0deg) rotateX(0deg)';
+//     });
+// });
+
+    </script>
+  </body>
+</html>
