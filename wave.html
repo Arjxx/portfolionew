@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Wave Animation</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .wave-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .wave {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 0, 204, 0.7), rgba(51, 51, 255, 0.7));
+            filter: blur(8px);
+            opacity: 0.8;
+            transform: translateY(-50%);
+            animation: waveAnimation 6s infinite linear;
+        }
+
+        @keyframes waveAnimation {
+            0% {
+                transform: translateX(-50%) translateY(-50%);
+            }
+            100% {
+                transform: translateX(0%) translateY(-50%);
+            }
+        }
+
+        .wave::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            transform: scaleX(-1) translateY(-50%);
+            animation: waveAnimation 6s infinite linear;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wave-container">
+        <div class="wave"></div>
+    </div>
+</body>
+</html>

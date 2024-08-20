@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Round Pointer with Inverted Colors</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #222;
+            cursor: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            position: relative;
+            width: 80%;
+            height: 80%;
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2rem;
+            cursor: none; /* Hide default cursor */
+            margin: 10px;
+        }
+
+        .custom-cursor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease;
+        }
+
+        .custom-cursor.hovered {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: white;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            transform: translate(-40%, -40%);
+        }
+    </style>
+</head>
+<body>
+    <div class="content hover-area">Hover over me 1!</div>
+    <div class="content hover-area">Hover over me 2!</div>
+    <div class="content hover-area">Hover over me 3!</div>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <script>
+        const hoverAreas = document.querySelectorAll('.hover-area');
+        const cursor = document.getElementById('cursor');
+
+        hoverAreas.forEach(area => {
+            area.addEventListener('mouseenter', function() {
+                cursor.classList.add('hovered');
+            });
+
+            area.addEventListener('mouseleave', function() {
+                cursor.classList.remove('hovered');
+            });
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>

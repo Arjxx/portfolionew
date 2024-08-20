@@ -142,16 +142,18 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   color: white;
-  font-size: 2rem;
-  background: url("https://t4.ftcdn.net/jpg/02/07/15/43/360_F_207154340_wLIJus4m3SBl5sAQmpqN3Um7REnUhskU.jpg");
+  font-size: 4rem;
+  background: url('https://t4.ftcdn.net/jpg/02/07/15/43/360_F_207154340_wLIJus4m3SBl5sAQmpqN3Um7REnUhskU.jpg');
   background-size: cover;
-  background-position: center center; /* This centers the image */
+  background-position: center center;  /* This centers the image */
   padding-left: 50px;
   padding-right: 50px;
+
+
 }
 
-.col {
-  /* line-height: 1rem; */
+.col{
+  line-height: 9rem;
 }
 
 /* card  */
@@ -161,13 +163,12 @@ nav {
   gap: 30px;
   justify-content: center;
   /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  /* grid-template-columns: 300px 300px; */
-  grid-template-columns: repeat(auto-fit,300px);
-  
+
+  grid-template-columns: 300px 300px ;
 }
 .card {
   position: relative;
-  /* width: 300px; */
+  width: 300px;
   height: 500px;
   overflow: hidden;
   border-radius: 10px;
@@ -249,6 +250,105 @@ nav {
   text-decoration: underline;
 }
 
+/* .card {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  background-color: #333;
+  transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease top 0.5s ease, left 0.5s ease;
+}
+.card-content{
+position: absolute;
+top:30px;
+left:30px;
+color: white;
+}
+
+.card.active-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  transform: none;
+  z-index: 99;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.card-before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  z-index: 1;
+}
+
+.card:hover .card-before {
+  transform: scale(5) translate(50px, 50px);
+  filter: blur(10px);
+}
+
+.card-content,
+.card-description,
+.card-link {
+  z-index: 2;
+  transition: opacity 0.5s ease;
+}
+
+.card.active-fullscreen .card-before {
+  transform: none;
+  filter: none;
+}
+
+.card.active-fullscreen .card-content,
+.card.active-fullscreen .card-description,
+.card.active-fullscreen .card-link {
+  opacity: 1;
+}
+
+.card-description {
+  position: absolute;
+  top: 250px;
+  right: -110%;
+  width: 90%;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  transition: right 0.5s ease;
+}
+
+.card:hover .card-description {
+  right: 0;
+}
+
+.card-link {
+  position: absolute;
+  bottom: -50px;
+  right: 20px;
+  color: aliceblue;
+  transition: bottom 0.5s ease;
+}
+
+.card:hover .card-link {
+  bottom: 20px;
+}
+
+.card-link a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.card-link a:hover {
+  text-decoration: underline;
+} */
+
 /* silding divs  */
 
 .box {
@@ -292,9 +392,10 @@ nav {
   transition: transform 0.1s ease;
   transform-style: preserve-3d;
   padding: 30px;
+
 }
 .box-item:hover {
-  transform: scale(1.2);
+  transform: scale(1.5);
 }
 
 /* Box 1 */
@@ -324,91 +425,20 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+@media(min-width:750px){
 
-
-.modal{
-  width: 100vw;
-  height:100vh;
-  position: fixed;  
-  background-color: #2eb4cc;
-  top: 0;
-  z-index: 999;
-  display: grid;  
-  background-size: cover;
-  background-position: center;
-  transition: 0.3s ease;
-  overflow: hidden;
-
-
-}
-
-.modal .close-btn{
-  position: absolute;
-  top: 20px;
-  right: 50px;
-  font-size: 3rem;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.close-btn:hover{
-rotate: 90deg;
-}
-
-body.lock-scroll {
-  overflow: hidden;
-}
-
-
-
-
-/* @media (min-width: 750px) {
-  .card-container {
+  .card-container{
     grid-template-columns: 300px 300px;
   }
-
-  .box-item {
-    position: initial;
-    width: 100%;
-  }
-  .box-item:hover {
-    transform: none;
-  }
 }
-@media (min-width: 1000px) {
-  .card-container {
-    grid-template-columns: 300px 300px 300px;
-  }
-  .banner {
-    font-size: 3rem;
-  }
+@media(min-width:1000px){
 
-}
-
-@media (min-width: 1300px) {
-  .card-container {
-    grid-template-columns: 300px 300px 300px 300px;
-  }
-  .banner {
-    font-size: 4rem;
-  }
-  .box-item {
-    position: absolute;
-    width: 30%;
-  }
-  .box-item:hover {
-    transform: scale(1.2);
-  }
-} */
-
-
-@media (max-width: 700px) {
   .card-container{
-    grid-template-columns: 600px;
-  }
-  .card{
-    width: 100%;
-  }
-  
-} 
+    grid-template-columns: 300px 300px 300px ; }
+}
+
+@media(min-width:1300px){
+
+  .card-container{
+    grid-template-columns: 300px 300px 300px 300px ; }
+}

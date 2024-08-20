@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Round Pointer with Inverted Colors</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            font-family: "Noto Sans", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            background-color: black;
+            cursor: none;
+        }
+
+        .container {
+            padding: 0 20px;
+        }
+
+        .custom-cursor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease;
+        }
+
+        .custom-cursor.hovered {
+            width: 100px;
+            height: 100px;
+            margin-left: -40px; /* Adjust margin to keep the cursor centered */
+            margin-top: -40px;  /* Adjust margin to keep the cursor centered */
+        }
+
+        .section-heading {
+            font-size: 3rem;
+            color: white;
+            display: flex;
+            justify-content: center;
+            margin: 4rem;
+            text-transform: uppercase;
+        }
+
+        #loader {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: purple;
+            z-index: 99;
+            transition: 0.3s ease;
+        }
+
+        .slider-container {
+            width: auto;
+            height: 70px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+
+        .slide {
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            font-size: 4rem;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+
+        nav {
+            background-color: black;
+            color: aliceblue;
+            height: 70px;
+            padding: 2px;
+            transition: 0.3s ease;
+            z-index: 100;
+            position: relative;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            justify-content: space-between;
+            transform: translateY(20%);
+            transition: transform 0.3s ease-in-out;
+            opacity: 0;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            align-items: center;
+            height: 100%;
+        }
+
+        .nav-item {
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border: 2px solid black;
+        }
+
+        .nav-item:hover {
+            border: 2px solid purple;
+            cursor: pointer;
+        }
+
+        .nav-dropdown {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 72px;
+            left: 0;
+            width: 100vw;
+            background-color: #272727;
+            height: 0px;
+            z-index: 999;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .banner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            color: white;
+            font-size: 4rem;
+            background: url('https://t4.ftcdn.net/jpg/02/07/15/43/360_F_207154340_wLIJus4m3SBl5sAQmpqN3Um7REnUhskU.jpg');
+            background-size: cover;
+            background-position: center center;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        .col {
+            line-height: 9rem;
+        }
+
+        .card-container {
+            display: grid;
+            gap: 30px;
+            justify-content: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .card {
+            position: relative;
+            width: 300px;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #333;
+        }
+
+        .card-before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            z-index: 1;
+        }
+
+        .card:hover .card-before {
+            transform: scale(1.5) translate(50px, 50px);
+            filter: blur(10px);
+        }
+
+        .card-content {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            z-index: 2;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .card-description {
+            position: absolute;
+            top: 250px;
+            right: -110%;
+            width: 90%;
+            padding: 10px;
+            color: white;
+            border-radius: 10px;
+            transition: right 0.5s ease;
+            z-index: 2;
+        }
+
+        .card:hover .card-description {
+            right: 0;
+        }
+
+        .card-link {
+            position: absolute;
+            bottom: -50px;
+            right: 20px;
+            color: aliceblue;
+            transition: bottom 0.5s ease;
+            z-index: 2;
+        }
+
+        .card:hover .card-link {
+            bottom: 20px;
+        }
+
+        .box {
+            position: relative;
+            height: 500vh;
+        }
+
+        .box-container {
+            position: relative;
+            top: 80vh;
+            background: black;
+        }
+
+        .inner-box {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: black;
+            display: flex;
+            justify-content: center;
+            color: white;
+            align-items: center;
+            font-size: 4rem;
+            z-index: 0;
+            text-transform: uppercase;
+        }
+
+        .box-item {
+            position: absolute;
+            width: 30%;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.1s ease;
+            transform-style: preserve-3d;
+        }
+
+        .box-item:hover {
+            transform: scale(1.5);
+        }
+
+        .box1 {
+            top: 0px;
+            left: 140px;
+            background-color: #2eb4cc;
+        }
+
+        .box2 {
+            top: 350px;
+            right: 225px;
+            background-color: #25a14a;
+        }
+
+        .box3 {
+            top: 700px;
+            left: 140px;
+            background-color: #ce5a5a;
+        }
+    </style>
+</head>
+<body>
+    <div id="loader">
+        <div class="slider-container">
+            <div class="slide">Hi welcome</div>
+        </div>
+    </div>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <nav id="nav">
+        <div class="navbar" id="navbar">
+            <div class="logo">ARJUN</div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#box-container" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link dropdown">More <span>&#11167;</span></a>
+                    <ul class="nav-dropdown">
+                        <li>dsfsd</li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link dropdown">Home</a>
+                    <ul class="nav-dropdown">
+                        <li>more</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="banner">
+        <div class="col">
+            <h1>Hi, I am <br />Arjun Suresh</h1>
+        </div>
+        <div class="col"></div>
+    </div>
+
+    <!-- Card Section -->
+    <div class="container">
+        <div class="section-heading"><h2>What I Do</h2></div>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-before" style="background-image: url('https://wallpaper.forfun.com/fetch/cd/cd975f9b1bc1a2f35629f88b63d0c24b.jpeg');"></div>
+                <div class="card-content">
+                    <h2 class="card-title">Web</h2>
+                    <h3 class="card-subtitle">Developer</h3>
+                </div>
+                <div class="card-description">
+                    Description for Card 1. It slides in from the right.
+                </div>
+                <div class="card-link">
+                    <a href="#">More</a>
+                </div>
+            </div>
+
+            <div class="card hover-area">
+                <div class="card-before" style="background-image: url('https://i0.wp.com/backgroundabstract.com/wp-content/uploads/edd/2022/01/gradient-network-connection-background_23-2148865392-e1656081168680.jpg?fit=626%2C417&ssl=1');"></div>
+                <div class="card-content">
+                    <h2 class="card-title">SEO</h2>
+                    <h3 class="card-subtitle">Subtitle 2</h3>
+                </div>
+                <div class="card-description">
+                    Description for Card 2. It slides in from the right.
+                </div>
+                <div class="card-link">
+                    <a href="#">More</a>
+                </div>
+            </div>
+
+            <div class="card hover-area">
+                <div class="card-before" style="background-image: url('https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/01/Google-Wallpapers-00047.png');"></div>
+                <div class="card-content">
+                    <h2 class="card-title">Graphic</h2>
+                    <h3 class="card-subtitle">Subtitle 3</h3>
+                </div>
+                <div class="card-description">
+                    Description for Card 3. It slides in from the right.
+                </div>
+                <div class="card-link">
+                    <a href="#">More</a>
+                </div>
+            </div>
+
+            <div class="card hover-area">
+                <div class="card-before" style="background-image: url('https://img.freepik.com/free-vector/realistic-background-futuristic-style_23-2149129125.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1723939200&semt=ais_hybrid');"></div>
+                <div class="card-content">
+                    <h2 class="card-title">Video</h2>
+                    <h3 class="card-subtitle">Subtitle 4</h3>
+                </div>
+                <div class="card-description">
+                    Description for Card 4. It slides in from the right.
+                </div>
+                <div class="card-link">
+                    <a href="#">More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sliding Divs -->
+    <div class="box">
+        <div class="inner-box">
+            <div class="section"><h2>Sliding Text Example</h2></div>
+        </div>
+        <div class="box-container" id="box-container">
+            <div class="box1 box-item hover-area">
+                <div class="image-placeholder">Laptop</div>
+            </div>
+            <div class="box2 box-item hover-area">
+                <div class="image-placeholder">Coding Book</div>
+            </div>
+            <div class="box3 box-item hover-area">
+                <div class="image-placeholder">Ship</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loader = document.getElementById("loader");
+            const navbar = document.getElementById("navbar");
+            const hi = document.querySelector(".slide");
+
+            hi.classList.add("active");
+
+            setTimeout(() => {
+                loader.style.height = "0px";
+                loader.style.opacity = "0";
+            }, 3000);
+
+            setTimeout(() => {
+                navbar.style.opacity = "1";
+                navbar.style.transform = "translateY(0)";
+            }, 4000);
+        });
+
+        const hoverAreas = document.querySelectorAll('.hover-area');
+        const cursor = document.getElementById('cursor');
+
+        hoverAreas.forEach(area => {
+            area.addEventListener('mouseenter', function() {
+                cursor.classList.add('hovered');
+            });
+
+            area.addEventListener('mouseleave', function() {
+                cursor.classList.remove('hovered');
+            });
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            // Position the cursor based on mouse position
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>

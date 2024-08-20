@@ -37,6 +37,14 @@
         </ul>
       </div>
     </nav>
+
+    <!-- banner  -->
+    <div class="banner">
+      <div class="col">
+        <h1>Hi, I am <br />Arjun Suresh</h1>
+      </div>
+      <div class="col"></div>
+    </div>
     <!-- card  -->
     <div class="container">
       <div class="section-heading"><h2>What I Do</h2></div>
@@ -49,14 +57,15 @@
             "
           ></div>
           <div class="card-content">
-            <h2 class="card-title">Web</h2>
-            <h3 class="card-subtitle">Developer</h3>
+            <h2 class="card-title">Web Development</h2>
+            <h3 class="card-subtitle">Building Modern Websites</h3>
           </div>
           <div class="card-description">
-            Description for Card 1. It slides in from the right.
+            Building responsive and dynamic websites using modern technologies
+            like HTML, CSS, JavaScript, and more.
           </div>
           <div class="card-link">
-            <a href="#">More</a>
+            <span onclick="popUp('web')">More</span>
           </div>
         </div>
 
@@ -69,13 +78,14 @@
           ></div>
           <div class="card-content">
             <h2 class="card-title">SEO</h2>
-            <h3 class="card-subtitle">Subtitle 2</h3>
+            <h3 class="card-subtitle">Optimizing Online Visibility</h3>
           </div>
           <div class="card-description">
-            Description for Card 2. It slides in from the right.
+            Optimizing websites to improve their visibility in search engines,
+            driving organic traffic and enhancing online presence.
           </div>
           <div class="card-link">
-            <a href="#">More</a>
+            <span onclick="popUp('seo')">More</span>
           </div>
         </div>
 
@@ -87,14 +97,15 @@
             "
           ></div>
           <div class="card-content">
-            <h2 class="card-title">Graphic</h2>
-            <h3 class="card-subtitle">Subtitle 3</h3>
+            <h2 class="card-title">Graphic Design</h2>
+            <h3 class="card-subtitle">Creating Visuals</h3>
           </div>
           <div class="card-description">
-            Description for Card 3. It slides in from the right.
+            Creating visually appealing designs, including logos, banners, and
+            other graphics, using tools like Adobe Photoshop and Illustrator.
           </div>
           <div class="card-link">
-            <a href="#">More</a>
+            <span onclick="popUp('graphic')">More</span>
           </div>
         </div>
 
@@ -107,13 +118,14 @@
           ></div>
           <div class="card-content">
             <h2 class="card-title">Video</h2>
-            <h3 class="card-subtitle">Subtitle 4</h3>
+            <h3 class="card-subtitle">Producing Videos</h3>
           </div>
           <div class="card-description">
-            Description for Card 4. It slides in from the right.
+            Producing and editing high-quality videos for various platforms,
+            from promotional content to instructional materials.
           </div>
           <div class="card-link">
-            <a href="#">More</a>
+            <span onclick="popUp('video')">More</span>
           </div>
         </div>
       </div>
@@ -122,17 +134,48 @@
     <!-- sliding divs  -->
     <div class="box">
       <div class="inner-box">
-        <div class="section"><h2>Sliding Text Example</h2></div>
+        <div class="section"><h2>About Me</h2></div>
       </div>
       <div class="box-container" id="box-container">
         <div class="box1 box-item">
-          <div class="image-placeholder">Laptop</div>
+          <div class="image-placeholder">
+            <h2>Who I Am</h2>
+            <p>
+              I am a passionate and skilled professional with a diverse
+              background in web development, SEO, graphic design, and video
+              production. My journey in the digital world has been fueled by a
+              deep love for creativity and technology, driving me to
+              continuously learn and evolve in my craft.
+            </p>
+          </div>
         </div>
         <div class="box2 box-item">
-          <div class="image-placeholder">Coding Book</div>
+          <div class="image-placeholder">
+            <h2>What I Do</h2>
+            <p>
+              I specialize in creating responsive and dynamic websites that not
+              only look great but also perform exceptionally well. My expertise
+              in SEO ensures that these websites are optimized to rank high on
+              search engines, driving organic traffic. Additionally, I bring
+              ideas to life through stunning graphic designs and engaging video
+              content, making sure every project I touch leaves a lasting
+              impression.
+            </p>
+          </div>
         </div>
         <div class="box3 box-item">
-          <div class="image-placeholder">Ship</div>
+          <div class="image-placeholder">
+            <h2>Why I Do It</h2>
+            <p>
+              I believe in the power of digital media to transform businesses
+              and ideas. My goal is to help brands and individuals reach their
+              full potential by providing top-notch services that combine
+              creativity with strategic thinking. Whether it’s building a
+              website, optimizing for SEO, designing graphics, or producing
+              videos, I’m driven by the desire to create impactful and
+              meaningful work.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -145,24 +188,67 @@
         </div>
       </div>
     </section> -->
-
+    <div id="modal-container" style="display: none"></div>
     <script>
+      function popUp(card) {
+        switch (card) {
+          case "web":
+            bg =
+              "https://wallpaper.forfun.com/fetch/cd/cd975f9b1bc1a2f35629f88b63d0c24b.jpeg";
+            break;
+          case "seo":
+            bg =
+              "https://i0.wp.com/backgroundabstract.com/wp-content/uploads/edd/2022/01/gradient-network-connection-background_23-2148865392-e1656081168680.jpg?fit=626%2C417&ssl=1";
+            break;
+          case "graphic":
+            bg =
+              "https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/01/Google-Wallpapers-00047.png";
+            break;
+          case "video":
+            bg =
+              "https://img.freepik.com/free-vector/realistic-background-futuristic-style_23-2149129125.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1723939200&semt=ais_hybrid";
+            break;
+          default:
+            // Optional: you can define a default background in case no case matches
+            bg = "";
+            break;
+        }
+
+        const modal = `<div class="modal" style="background-image:url(${bg})">
+      <span class="close-btn">X</span>
+    </div>`;
+
+        const modalContainer = document.getElementById("modal-container");
+        modalContainer.innerHTML = modal;
+        document.body.classList.add("lock-scroll");
+        modalContainer.style.display = "block";
+        const closeBtn = document.querySelector(".close-btn");
+        if (closeBtn) {
+          closeBtn.addEventListener("click", () => {
+            modalContainer.style.display = "none";
+            document.body.classList.remove("lock-scroll");
+          });
+        }
+      }
       document.addEventListener("DOMContentLoaded", () => {
         const loader = document.getElementById("loader");
         const navbar = document.getElementById("navbar");
         const hi = document.querySelector(".slide");
 
         hi.classList.add("active");
+         document.body.classList.add('lock-scroll');
         // Hide loader after 10 seconds
         setTimeout(() => {
           loader.style.height = "0px";
           loader.style.opacity = "0";
+         
         }, 3000);
 
         // Show and animate navbar after 11 seconds
         setTimeout(() => {
           navbar.style.opacity = "1";
           navbar.style.transform = "translateY(0)";
+          document.body.classList.remove('lock-scroll');
         }, 4000);
         ///////scroll box
       });
@@ -186,30 +272,30 @@
       //   });
       // });
 
-//       const boxContainer = document.querySelector('.box');
+      //       const boxContainer = document.querySelector('.box');
 
-// boxContainer.addEventListener('mousemove', (e) => {
-//     const { offsetWidth: width, offsetHeight: height } = boxContainer;
-//     const { clientX: x, clientY: y } = e;
+      // boxContainer.addEventListener('mousemove', (e) => {
+      //     const { offsetWidth: width, offsetHeight: height } = boxContainer;
+      //     const { clientX: x, clientY: y } = e;
 
-//     // Calculate the position of the mouse inside the boxContainer
-//     const moveX = ((x / width) - 0.5) * 30;
-//     const moveY = ((y / height) - 0.5) * -30;
+      //     // Calculate the position of the mouse inside the boxContainer
+      //     const moveX = ((x / width) - 0.5) * 30;
+      //     const moveY = ((y / height) - 0.5) * -30;
 
-//     // Apply the transform to each box-item
-//     const boxItems = document.querySelectorAll('.box-item');
-//     boxItems.forEach(box => {
-//         box.style.transform = `rotateY(${moveX}deg) rotateX(${moveY}deg)`;
-//     });
-// });
+      //     // Apply the transform to each box-item
+      //     const boxItems = document.querySelectorAll('.box-item');
+      //     boxItems.forEach(box => {
+      //         box.style.transform = `rotateY(${moveX}deg) rotateX(${moveY}deg)`;
+      //     });
+      // });
 
-// boxContainer.addEventListener('mouseleave', () => {
-//     const boxItems = document.querySelectorAll('.box-item');
-//     boxItems.forEach(box => {
-//         box.style.transform = 'rotateY(0deg) rotateX(0deg)';
-//     });
-// });
-
+      // boxContainer.addEventListener('mouseleave', () => {
+      //     const boxItems = document.querySelectorAll('.box-item');
+      //     boxItems.forEach(box => {
+      //         box.style.transform = 'rotateY(0deg) rotateX(0deg)';
+      //     });
+      // });
     </script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   </body>
 </html>
