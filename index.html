@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <title>Document</title>
   </head>
   <body>
@@ -65,7 +67,7 @@
             like HTML, CSS, JavaScript, and more.
           </div>
           <div class="card-link">
-            <span onclick="popUp('web')">More</span>
+            <span id="web" onclick="popUp(this.id)">More</span>
           </div>
         </div>
 
@@ -85,7 +87,7 @@
             driving organic traffic and enhancing online presence.
           </div>
           <div class="card-link">
-            <span onclick="popUp('seo')">More</span>
+            <span id="seo" onclick="popUp(this.id)">More</span>
           </div>
         </div>
 
@@ -105,7 +107,7 @@
             other graphics, using tools like Adobe Photoshop and Illustrator.
           </div>
           <div class="card-link">
-            <span onclick="popUp('graphic')">More</span>
+            <span id="graphic" onclick="popUp(this.id)">More</span>
           </div>
         </div>
 
@@ -125,7 +127,7 @@
             from promotional content to instructional materials.
           </div>
           <div class="card-link">
-            <span onclick="popUp('video')">More</span>
+            <span id="video" onclick="popUp(this.id)">More</span>
           </div>
         </div>
       </div>
@@ -134,7 +136,7 @@
     <!-- sliding divs  -->
     <div class="box">
       <div class="inner-box">
-        <div class="section"><h2>About Me</h2></div>
+        <div class="section-heading"><h2>About Me</h2></div>
       </div>
       <div class="box-container" id="box-container">
         <div class="box1 box-item">
@@ -188,21 +190,134 @@
         </div>
       </div>
     </section> -->
+
+    <!-- <div class="modal" style="background-image: url(${bg})">
+      <span class="close-btn">X</span>
+
+      <section class="info-skills">
+        <div class="discription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis harum adipisci numquam velit reprehenderit quo consectetur, explicabo unde impedit nisi. Explicabo, fugit quis! Deserunt, sint.</div>
+     
+        <div class="skill-title"><h5>Skills</h5> </div>    <div class="skills">
+          <div class="info-tag">fgfdgfd</div>
+          <div class="info-tag">fgfdgfd</div>
+          <div class="info-tag">fgfdgfd</div>
+          <div class="info-tag">fgfdgfd</div>
+          <div class="info-tag">fgfdgfd</div>
+          <div class="info-tag">fgfdgfd</div>
+          <div class="info-tag">fgfdgfd</div>
+          <div class="info-tag">fgfdgfd</div>
+          <div class="info-tag">fgfdgfd</div>
+        </div>
+        <div class="skill-title"><h5>Tools</h5> </div>   <div class="tools">
+          <div class="info-tag">fgfdgfd</div>
+          <div class="info-tag">fgfdgfd</div>
+          <div class="info-tag">fgfdgfd</div>
+        </div>
+      </section>
+    </div> -->
+
     <div id="modal-container" style="display: none"></div>
     <script>
       function popUp(card) {
+        let content;
         switch (card) {
           case "web":
             bg =
               "https://wallpaper.forfun.com/fetch/cd/cd975f9b1bc1a2f35629f88b63d0c24b.jpeg";
+
+            content = {
+              description:
+                "A highly skilled web developer with over 2 years of experience in building responsive and dynamic web applications. Proficient in front-end and back-end technologies, with a strong focus on modern JavaScript frameworks, API integration, and database management. Adept at using a wide range of tools to streamline development workflows and ensure high-quality code delivery.",
+              skills: [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "API",
+                "PHP",
+                "MySQL",
+                "React",
+                "Node.js",
+              ],
+              experience: "2+",
+              tools: [
+                "VS Code",
+                "CPanel",
+                "phpMyAdmin",
+                "FileZilla",
+                "Postman",
+                "Git",
+                "Docker",
+                "Webpack",
+                "Babel",
+              ],
+              featuredImage: "assets/img/laptop.png"
+            };
             break;
           case "seo":
             bg =
               "https://i0.wp.com/backgroundabstract.com/wp-content/uploads/edd/2022/01/gradient-network-connection-background_23-2148865392-e1656081168680.jpg?fit=626%2C417&ssl=1";
+
+            content = {
+              description:
+                "An experienced SEO specialist with a strong background in optimizing websites to achieve higher search engine rankings and increase organic traffic. Proficient in keyword research, on-page optimization, link building, and technical SEO. Skilled at analyzing data and implementing strategies that drive measurable results.",
+              skills: [
+                "Keyword Research",
+                "On-Page SEO",
+                "Technical SEO",
+                "Link Building",
+                "Content Optimization",
+                "Google Analytics",
+                "SEO Audits",
+                "Competitor Analysis",
+              ],
+              experience: "3+ years",
+              tools: [
+                "Google Analytics",
+                "Google Search Console",
+                "SEMrush",
+                "Ahrefs",
+                "Moz",
+                "Yoast SEO",
+                "Screaming Frog",
+                "Keyword Planner",
+                "SurferSEO",
+                "Google Tag Manager",
+              ],
+            };
             break;
           case "graphic":
             bg =
               "https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/01/Google-Wallpapers-00047.png";
+
+            content = {
+              description:
+                "A creative and detail-oriented graphic designer experienced in creating visually compelling designs for digital and print media. Skilled in translating client ideas into unique and impactful designs. Proficient in using industry-standard design software to produce high-quality work that meets branding and marketing goals.",
+              skills: [
+                "Adobe Photoshop",
+                "Adobe Illustrator",
+                "Adobe InDesign",
+                "Typography",
+                "Branding",
+                "Logo Design",
+                "Print Design",
+                "UI/UX Design",
+                "Color Theory",
+                "Visual Communication",
+              ],
+              experience: "4+ years",
+              tools: [
+                "Adobe Creative Suite",
+                "Sketch",
+                "Figma",
+                "CorelDRAW",
+                "Canva",
+                "Procreate",
+                "Wacom Tablet",
+                "Microsoft PowerPoint",
+                "Affinity Designer",
+                "Adobe XD",
+              ],
+            };
             break;
           case "video":
             bg =
@@ -214,8 +329,32 @@
             break;
         }
 
+        const skills = content.skills
+          .map((skill) => `<div class="info-tag">${skill}</div>`)
+          .join("");
+
+        const tools = content.tools
+          .map((tool) => `<div class="info-tag">${tool}</div>`)
+          .join("");
+
         const modal = `<div class="modal" style="background-image:url(${bg})">
       <span class="close-btn">X</span>
+
+       <section class="info-skills">
+        <div class = "col1">  <div class="discription">${content.description}</div>
+     <div class="skill-title"><h5>Skills I have</h5> </div> 
+      <div class="skills">
+        
+      ${skills}      
+      </div>     
+     <div class="skill-title"><h5>Tools I use</h5> </div> 
+      <div class="tools">
+   
+        ${tools} 
+       </div></div>
+         <div class = "col2"><img src="${content.featuredImage}" alt=""></div>
+    
+    </section>
     </div>`;
 
         const modalContainer = document.getElementById("modal-container");
@@ -236,19 +375,18 @@
         const hi = document.querySelector(".slide");
 
         hi.classList.add("active");
-         document.body.classList.add('lock-scroll');
+        document.body.classList.add("lock-scroll");
         // Hide loader after 10 seconds
         setTimeout(() => {
           loader.style.height = "0px";
           loader.style.opacity = "0";
-         
         }, 3000);
 
         // Show and animate navbar after 11 seconds
         setTimeout(() => {
           navbar.style.opacity = "1";
           navbar.style.transform = "translateY(0)";
-          document.body.classList.remove('lock-scroll');
+          document.body.classList.remove("lock-scroll");
         }, 4000);
         ///////scroll box
       });
