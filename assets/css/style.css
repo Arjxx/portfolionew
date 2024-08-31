@@ -70,7 +70,6 @@ nav {
   background-color: black;
   color: aliceblue;
   height: 70px;
-  padding: 2px;
   transition: 0.3s ease;
   /* overflow-y: hidden; */
   z-index: 100;
@@ -84,6 +83,8 @@ nav {
   transform: translateY(20%);
   transition: transform 0.3s ease-in-out;
   opacity: 0;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 .nav-list {
   display: flex;
@@ -134,7 +135,13 @@ nav {
   height: 0px;
   z-index: 999;
   transform: translateY(-10px);
+  padding: 30px;
   transition: all 0.3s ease;
+}
+
+.logo{width:50px;}
+.logo img{
+  width:100%;
 }
 /* banner */
 
@@ -259,7 +266,6 @@ nav {
 .box-container {
   position: relative;
   top: 80vh;
-  background: black;
 }
 
 /* Inner Box */
@@ -282,7 +288,7 @@ nav {
 .box-item {
   position: absolute;
   width: 30%;
-  height: 350px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -294,6 +300,7 @@ nav {
 }
 .box-item:hover {
   transform: scale(1.2);
+  z-index:100 ;
 }
 
 /* Box 1 */
@@ -434,6 +441,16 @@ body.lock-scroll {
 .tools .info-tag {
   background-color: #cfe2ff;
 }
+
+
+/* footer */
+footer{
+  height:600px;
+  background-color: #272727;
+}
+
+
+
 /* @media (min-width: 750px) {
   .card-container {
     grid-template-columns: 300px 300px;
@@ -472,20 +489,67 @@ body.lock-scroll {
     transform: scale(1.2);
   }
 } */
+@media (max-width:1232px) {
 
+  .box-container{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+    .inner-box {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      color: white;
+      align-items: center;
+      font-size: 4rem;
+      z-index: 0; /* Optional: Ensure it stays on top */
+      text-transform: uppercase;
+    }
+    
+    /* Common styles for all boxes */
+    .box-item {
+      position: initial;
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.5rem;
+      transition: transform 0.1s ease;
+      transform-style: preserve-3d;
+      padding: 30px;
+      margin: 20px 0;
+    }
+    .box-item:hover {
+      transform:none;
+    }
+    
+   
+    
+}
 @media (max-width:768px) {
   .card-container {
-    grid-template-columns: 600px;
+    grid-template-columns: 500px;
   }
   .card {
     width: 100%;
   }
+
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 500px) {
   .card-container {
-    grid-template-columns: 500px;
+    grid-template-columns: 470px;
   }
   
 }
