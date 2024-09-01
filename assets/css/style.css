@@ -24,8 +24,8 @@ body {
   color: white;
   display: flex;
   justify-content: center;
-  margin: 4rem;
-  text-transform: uppercase;
+  /* margin: 4rem; */
+  /* text-transform: uppercase; */
 }
 /* LOADER */
 #loader {
@@ -139,9 +139,11 @@ nav {
   transition: all 0.3s ease;
 }
 
-.logo{width:50px;}
-.logo img{
-  width:100%;
+.logo {
+  width: 50px;
+}
+.logo img {
+  width: 100%;
 }
 /* banner */
 
@@ -300,7 +302,7 @@ nav {
 }
 .box-item:hover {
   transform: scale(1.2);
-  z-index:100 ;
+  z-index: 100;
 }
 
 /* Box 1 */
@@ -371,26 +373,26 @@ body.lock-scroll {
   /* border-radius: 8px; */
   align-items: center;
 }
-.col1{
+.col1 {
   flex: 2;
 }
-.col2{
+.col2 {
   flex: 1;
 }
 
-.col2 img{
+.col2 img {
   width: 100%;
   animation: float 2s ease infinite;
 }
 
 @keyframes float {
-  0%,100%{
+  0%,
+  100% {
     transform: translateY(0);
   }
-  50%{
+  50% {
     transform: translateY(-10px);
   }
-  
 }
 .discription {
   font-size: 1.2em;
@@ -402,14 +404,14 @@ body.lock-scroll {
   /* width: 60%; */
 }
 
-.skill-title{
-  margin-top: 50px;;
+.skill-title {
+  margin-top: 50px;
 }
-.skill-title h5{
+.skill-title h5 {
   color: white;
   font-size: 2rem;
   padding: 0;
-  margin:0;
+  margin: 0;
 }
 .skills,
 .tools {
@@ -430,7 +432,7 @@ body.lock-scroll {
   border-radius: 50px;
   transition: 0.2s ease;
 }
-.info-tag:hover{
+.info-tag:hover {
   transform: translateY(-5px);
 }
 
@@ -442,15 +444,48 @@ body.lock-scroll {
   background-color: #cfe2ff;
 }
 
-
 /* footer */
-footer{
-  height:600px;
+footer {
+  min-height: 600px;
   background-color: #272727;
 }
 
+.footer-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+  gap:30px
+}
+.footer-row .col {
+  text-align: left;
+  padding: 20px;
+}
+.footer-row .col ul {
+  list-style: none;
+  padding: 0;
+  
+}
+.footer-row .col ul a {
+  color:#ce5a5a;
+  text-decoration: none;
+  
+}
 
+#up-btn{
+  padding: 20px;
+  background-color: #ce5a5a;
+  position: fixed;
+  right: 50px;
+  bottom: 200px;
+  z-index: 998;
+opacity: 0;
+visibility: hidden;
+transition: 0.2s ease;}
 
+#up-btn.active{
+  opacity: 1;
+  visibility: visible;
+}
 /* @media (min-width: 750px) {
   .card-container {
     grid-template-columns: 300px 300px;
@@ -489,75 +524,65 @@ footer{
     transform: scale(1.2);
   }
 } */
-@media (max-width:1232px) {
-
-  .box-container{
+@media (max-width: 1232px) {
+  .box-container {
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  
-  
-    .inner-box {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      color: white;
-      align-items: center;
-      font-size: 4rem;
-      z-index: 0; /* Optional: Ensure it stays on top */
-      text-transform: uppercase;
-    }
-    
-    /* Common styles for all boxes */
-    .box-item {
-      position: initial;
-      width: 100%;
-      height: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 1.5rem;
-      transition: transform 0.1s ease;
-      transform-style: preserve-3d;
-      padding: 30px;
-      margin: 20px 0;
-    }
-    .box-item:hover {
-      transform:none;
-    }
-    
-   
-    
+
+  .inner-box {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    font-size: 4rem;
+    z-index: 0; /* Optional: Ensure it stays on top */
+    text-transform: uppercase;
+  }
+
+  /* Common styles for all boxes */
+  .box-item {
+    position: initial;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.1s ease;
+    transform-style: preserve-3d;
+    padding: 30px;
+    margin: 20px 0;
+  }
+  .box-item:hover {
+    transform: none;
+  }
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .card-container {
     grid-template-columns: 500px;
   }
   .card {
     width: 100%;
   }
-
 }
-
 
 @media (max-width: 500px) {
   .card-container {
     grid-template-columns: 470px;
   }
-  
 }
 
-@media (max-width:400px) {
+@media (max-width: 400px) {
   .card-container {
     grid-template-columns: 300px;
   }
-  
 }
-
