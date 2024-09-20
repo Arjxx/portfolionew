@@ -59,11 +59,11 @@
     <div class="container">
       <div class="section-heading"><h2>What I Do</h2></div>
       <div class="card-container">
-        <div class="card active">
+        <div class="card active" id="web" onclick="popUp(this.id)">
           <div
             class="card-before"
             style="
-              background-image: url('https://wallpaper.forfun.com/fetch/cd/cd975f9b1bc1a2f35629f88b63d0c24b.jpeg');
+              background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20231006/pngtree-computerized-seo-background-exploring-web-development-programming-code-and-app-development-image_13515246.png');
             "
           ></div>
           <div class="card-content">
@@ -75,15 +75,15 @@
             like HTML, CSS, JavaScript, and more.
           </div>
           <div class="card-link">
-            <span id="web" onclick="popUp(this.id)">More</span>
+            <span >More</span>
           </div>
         </div>
 
-        <div class="card">
+        <div class="card"  id="seo" onclick="popUp(this.id)">
           <div
             class="card-before"
             style="
-              background-image: url('https://i0.wp.com/backgroundabstract.com/wp-content/uploads/edd/2022/01/gradient-network-connection-background_23-2148865392-e1656081168680.jpg?fit=626%2C417&ssl=1');
+              background-image: url('https://images7.alphacoders.com/108/1087509.jpg');
             "
           ></div>
           <div class="card-content">
@@ -95,11 +95,11 @@
             driving organic traffic and enhancing online presence.
           </div>
           <div class="card-link">
-            <span id="seo" onclick="popUp(this.id)">More</span>
+            <span>More</span>
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" id="graphic" onclick="popUp(this.id)">
           <div
             class="card-before"
             style="
@@ -115,11 +115,11 @@
             other graphics, using tools like Adobe Photoshop and Illustrator.
           </div>
           <div class="card-link">
-            <span id="graphic" onclick="popUp(this.id)">More</span>
+            <span >More</span>
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" id="video" onclick="popUp(this.id)">
           <div
             class="card-before"
             style="
@@ -135,7 +135,7 @@
             from promotional content to instructional materials.
           </div>
           <div class="card-link">
-            <span id="video" onclick="popUp(this.id)">More</span>
+            <span >More</span>
           </div>
         </div>
       </div>
@@ -144,7 +144,7 @@
     <!-- sliding divs  -->
     <div class="box">
       <div class="inner-box">
-        <div id="about-target" class="section-heading"><h2>About Me</h2></div>
+        <div id="about-target" class="section-heading"><h2>About Me </h2></div>
       </div>
       <div class="box-container" id="box-container">
         <div class="box1 box-item">
@@ -236,16 +236,20 @@
 
 </div>
   </section>
+  <div id="copyright"></div>
 </footer>
 <div id="up-btn">up</div>
 
     <script>
+y = new Date().getFullYear();
+
+document.getElementById('copyright').innerHTML =`&copy ${y} | Arjun Suresh`
       function popUp(card) {
         let content;
         switch (card) {
           case "web":
             bg =
-              "https://wallpaper.forfun.com/fetch/cd/cd975f9b1bc1a2f35629f88b63d0c24b.jpeg";
+              "https://png.pngtree.com/thumb_back/fw800/background/20231006/pngtree-computerized-seo-background-exploring-web-development-programming-code-and-app-development-image_13515246.png";
 
             content = {
               description:
@@ -277,7 +281,7 @@
             break;
           case "seo":
             bg =
-              "https://i0.wp.com/backgroundabstract.com/wp-content/uploads/edd/2022/01/gradient-network-connection-background_23-2148865392-e1656081168680.jpg?fit=626%2C417&ssl=1";
+              "https://images7.alphacoders.com/108/1087509.jpg";
 
             content = {
               description:
