@@ -19,6 +19,13 @@
         <div class="slide">Hi welcome</div>
       </div>
     </div>
+    <div class="burger-container">   <div class="burger-icon" id="burger-icon">
+
+      <span></span>
+      <span></span>
+      <span></span>
+  </div></div>
+ 
     <nav id="nav">
       <div class="navbar" id="navbar">
         <div class="logo"><img src="assets/img/logo.png" alt=""></div>
@@ -31,6 +38,10 @@
             <a  href="#" class="nav-link" >Gallery</a>
           </li>
           <li class="nav-item">
+            <a href="#" class="nav-link dropdown">Contact</a>
+           
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link dropdown">More <span>&#11167;</span></a>
             <div class="nav-dropdown">
               <ul class="nav-dropdown-list">
@@ -38,12 +49,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link dropdown">Home</a>
-            <ul class="nav-dropdown">
-              <li>more</li>
-            </ul>
-          </li>
+    
         </ul>
       </div>
     </nav>
@@ -419,6 +425,8 @@ document.getElementById('copyright').innerHTML =`&copy ${y} | Arjun Suresh`
       }
       document.addEventListener("DOMContentLoaded", () => {
         const loader = document.getElementById("loader");
+        const nav = document.getElementById("nav");
+
         const navbar = document.getElementById("navbar");
         const hi = document.querySelector(".slide");
 
@@ -437,6 +445,10 @@ document.getElementById('copyright').innerHTML =`&copy ${y} | Arjun Suresh`
           document.body.classList.remove("lock-scroll");
         }, 4000);
         ///////scroll box
+        document.getElementById('burger-icon').addEventListener('click', function() {
+      this.classList.toggle('active');
+      nav.classList.toggle('show')
+      });
       });
 
       // cards
@@ -628,6 +640,11 @@ document.addEventListener("DOMContentLoaded", function () {
   var el = document.getElementById('all');
   displayImages(el);
 });
+
+
+
+
+
     </script>
     
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
