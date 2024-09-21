@@ -17,6 +17,7 @@ body {
 
 .container {
   padding: 0 20px;
+  margin-top: 100px;
 }
 
 .section-heading {
@@ -152,7 +153,7 @@ nav {
   grid-template-columns: 1fr 1fr;
   color: white;
   font-size: 2rem;
-  background: url("https://t4.ftcdn.net/jpg/02/07/15/43/360_F_207154340_wLIJus4m3SBl5sAQmpqN3Um7REnUhskU.jpg");
+  background-image: url("/assets/img/bg1.jpeg");
   background-size: cover;
   background-position: center center; /* This centers the image */
   padding-left: 50px;
@@ -261,7 +262,7 @@ nav {
 
 .box {
   position: relative;
-  height: 500vh; /* Ensure the Box has enough height to allow for scrolling */
+  height: 3000px; /* Ensure the Box has enough height to allow for scrolling */
 }
 
 /* Box Container */
@@ -284,6 +285,7 @@ nav {
   font-size: 4rem;
   z-index: 0; /* Optional: Ensure it stays on top */
   /* text-transform: uppercase; */
+  background-size: cover;
 }
 
 /* Common styles for all boxes */
@@ -309,21 +311,21 @@ nav {
 .box1 {
   top: 0px;
   left: 140px;
-  background-color: #2eb4cc; /* Placeholder background color */
+  background-color: #2f303046; /* Placeholder background color */
 }
 
 /* Box 2 */
 .box2 {
   top: 350px;
   right: 225px;
-  background-color: #25a14a; /* Placeholder background color */
+  background-color: #2f303046; /* Placeholder background color */
 }
 
 /* Box 3 */
 .box3 {
   top: 700px;
   left: 140px;
-  background-color: #ce5a5a; /* Placeholder background color */
+  background-color: #2f303046; /* Placeholder background color */
 }
 
 /* About   */

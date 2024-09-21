@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
 
-    <title>Document</title>
+    <title>Arjun Suresh</title>
   </head>
   <body>
     <div id="loader">
@@ -57,7 +57,7 @@
     </div>
     <!-- card  -->
     <div class="container">
-      <div class="section-heading"><h2>What I Do</h2></div>
+      <div class="section-heading"><h2> Skills </h2></div>
       <div class="card-container">
         <div class="card active" id="web" onclick="popUp(this.id)">
           <div
@@ -143,7 +143,7 @@
 
     <!-- sliding divs  -->
     <div class="box">
-      <div class="inner-box">
+      <div class="inner-box " style="background-image: url('assets/img/bg2.jpg');">
         <div id="about-target" class="section-heading"><h2>About Me </h2></div>
       </div>
       <div class="box-container" id="box-container">
@@ -216,8 +216,30 @@
 </div>
 <!-- footer  -->
 
+<div class="container">
+<div class="section-heading"><h2> Contact </h2></div>
+
+<div class="holder">
+  <a href="mailto:arjunsuresh858@gmail.com" class="sort-btn">arjunsuresh858@gmail.com</a>
+
+</div>
+</div>
 
 
+<style>
+  .holder{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .holder a {
+    margin: 20px;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #ce5a5a;
+  }
+</style>
 <footer>
   <section>
 <div class="footer-row">
@@ -517,7 +539,7 @@ function displayImages(item) {
 
     const imageElement = processedImages.map((image) =>
         `<div class="${image.category}">
-            <img src="assets/${image.src}" alt="Image ${image.id}" class="image-item"/>
+            <img src="assets/${image.src}" alt="Image ${image.id}" class="image-item" loading="lazy"/>
         </div>`
     ).join("");
 
@@ -551,9 +573,7 @@ function displayImages(item) {
 }
 
 
-var el = document.getElementById('all');
-   
-displayImages(el);
+
 
   
 function scrollToSection(item){
@@ -582,6 +602,32 @@ window.addEventListener('scroll',function(){
 
   }
 })
+document.addEventListener("DOMContentLoaded", function () {
+  const lazyImages = document.querySelectorAll("img[loading='lazy']");
+
+  const lazyLoad = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.add("loaded");
+        observer.unobserve(img);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(lazyLoad, {
+    rootMargin: "0px 0px 300px 0px",
+  });
+
+  lazyImages.forEach((img) => {
+    observer.observe(img);
+  });
+
+
+  var el = document.getElementById('all');
+  displayImages(el);
+});
     </script>
     
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
