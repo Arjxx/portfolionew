@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   background-color: black;
 }
 
@@ -339,10 +339,12 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
+#modal-container{
+  height: auto;
+}
 .modal {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   background-color: #2eb4cc;
   top: 0;
@@ -458,6 +460,7 @@ footer {
   min-height: 600px;
   background-color: #272727;
   position: relative;
+  width: 100%;
 }
 
 .footer-row {
@@ -482,7 +485,6 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
   color: whitesmoke;
   text-align: center;
   padding: 20px;
@@ -492,7 +494,7 @@ footer {
   padding: 20px;
   background-color: #ce5a5a;
   position: fixed;
-  right: 50px;
+  right: 30px;
   bottom: 200px;
   z-index: 998;
   opacity: 0;
@@ -614,8 +616,9 @@ footer {
     z-index: 100;
     position: relative;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     padding: 50px 0;
+    overflow-x: hidden;
   
   }
   
@@ -698,7 +701,7 @@ footer {
   .burger-container{
     position: fixed;
     top: 30px;
-    right:50px;
+    right:30px;
     z-index: 999;
     color: wheat;
   }
@@ -761,7 +764,7 @@ footer {
 
 @media (max-width: 500px) {
   .card-container {
-    grid-template-columns: 470px;
+    grid-template-columns: 400px;
   }
 }
 

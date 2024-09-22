@@ -46,10 +46,10 @@
 }
 .sort{
 display: flex;
-width :500px;
+/* width :500px; */
 justify-content: space-between;
 align-items: center;
-font-size: 2rem;
+/* font-size: 2rem; */
 color: aliceblue;
 
 }
@@ -60,6 +60,7 @@ color: aliceblue;
     border: 1px solid white;
     border-radius: 20px;
     transition: 0.2s ease ;
+    margin: 5px;
 
 }
 .sort-btn.active{
