@@ -25,7 +25,7 @@ body {
 }
 
 .section-heading {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   display: flex;
   justify-content: center;
@@ -267,7 +267,7 @@ nav {
 
 .box {
   position: relative;
-  height: 3000px; /* Ensure the Box has enough height to allow for scrolling */
+  height: 2900px; /* Ensure the Box has enough height to allow for scrolling */
 }
 
 /* Box Container */
@@ -302,7 +302,7 @@ nav {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   transition: transform 0.1s ease;
   transform-style: preserve-3d;
   padding: 30px;
@@ -316,21 +316,21 @@ nav {
 .box1 {
   top: 0px;
   left: 140px;
-  background-color: #2f303046; /* Placeholder background color */
+  background-color: #252222c7; /* Placeholder background color */
 }
 
 /* Box 2 */
 .box2 {
   top: 350px;
   right: 225px;
-  background-color: #2f303046; /* Placeholder background color */
+  background-color: #252222c7; /* Placeholder background color */
 }
 
 /* Box 3 */
 .box3 {
   top: 700px;
   left: 140px;
-  background-color: #2f303046; /* Placeholder background color */
+  background-color: #252222c7; /* Placeholder background color */
 }
 
 /* About   */
@@ -576,7 +576,7 @@ footer {
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     transition: transform 0.1s ease;
     transform-style: preserve-3d;
     padding: 30px;

@@ -16,7 +16,7 @@
   <body>
     <div id="loader">
       <div class="slider-container">
-        <div class="slide">Hi welcome</div>
+        <div class="slide">loading</div>
       </div>
     </div>
     <div class="burger-container">   <div class="burger-icon" id="burger-icon">
@@ -32,13 +32,13 @@
         <ul class="nav-list">
        
           <li class="nav-item">
-            <a id="about" href="#box-container" class="nav-link" onclick="scrollToSection(this)">About</a>
+            <a id="about"  class="nav-link" onclick="scrollToSection(this)">About</a>
           </li>
-          <li id="gal" class="nav-item" onclick="scrollToSection(this)">
-            <a  href="#" class="nav-link" >Gallery</a>
+          <li  class="nav-item" >
+            <a  id="gal" class="nav-link"onclick="scrollToSection(this)" >Gallery</a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link dropdown">Contact</a>
+          <li  class="nav-item">
+            <a   id="contact"  class="nav-link" onclick="scrollToSection(this)">Contact</a>
            
           </li>
           <li class="nav-item">
@@ -69,7 +69,7 @@
           <div
             class="card-before"
             style="
-              background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20231006/pngtree-computerized-seo-background-exploring-web-development-programming-code-and-app-development-image_13515246.png');
+              background-image: url('https://png.pngtree.com/background/20231030/original/pngtree-bold-and-dynamic-3d-illustration-of-black-and-red-abstract-technology-picture-image_5786699.jpg');
             "
           ></div>
           <div class="card-content">
@@ -89,7 +89,7 @@
           <div
             class="card-before"
             style="
-              background-image: url('https://images7.alphacoders.com/108/1087509.jpg');
+              background-image: url('https://c0.wallpaperflare.com/preview/187/945/117/black-and-red-laptop-keyboard.jpg');
             "
           ></div>
           <div class="card-content">
@@ -223,7 +223,7 @@
 <!-- footer  -->
 
 <div class="container">
-<div class="section-heading"><h2> Contact </h2></div>
+<div id="contact-target" class="section-heading"><h2> Contact </h2></div>
 
 <div class="holder">
   <a href="mailto:arjunsuresh858@gmail.com" class="sort-btn">arjunsuresh858@gmail.com</a>
@@ -273,12 +273,21 @@
 y = new Date().getFullYear();
 
 document.getElementById('copyright').innerHTML =`&copy ${y} | Arjun Suresh`
+
+const nav = document.getElementById("nav");
+
+
+const links = document.querySelectorAll('.nav-link');
+
+
+
+
       function popUp(card) {
         let content;
         switch (card) {
           case "web":
             bg =
-              "https://png.pngtree.com/thumb_back/fw800/background/20231006/pngtree-computerized-seo-background-exploring-web-development-programming-code-and-app-development-image_13515246.png";
+              "https://png.pngtree.com/background/20231030/original/pngtree-bold-and-dynamic-3d-illustration-of-black-and-red-abstract-technology-picture-image_5786699.jpg";
 
             content = {
               description:
@@ -310,7 +319,7 @@ document.getElementById('copyright').innerHTML =`&copy ${y} | Arjun Suresh`
             break;
           case "seo":
             bg =
-              "https://images7.alphacoders.com/108/1087509.jpg";
+              "https://c0.wallpaperflare.com/preview/187/945/117/black-and-red-laptop-keyboard.jpg";
 
             content = {
               description:
@@ -426,7 +435,6 @@ document.getElementById('copyright').innerHTML =`&copy ${y} | Arjun Suresh`
       }
       document.addEventListener("DOMContentLoaded", () => {
         const loader = document.getElementById("loader");
-        const nav = document.getElementById("nav");
 
         const navbar = document.getElementById("navbar");
         const hi = document.querySelector(".slide");
@@ -446,10 +454,26 @@ document.getElementById('copyright').innerHTML =`&copy ${y} | Arjun Suresh`
           document.body.classList.remove("lock-scroll");
         }, 4000);
         ///////scroll box
-        document.getElementById('burger-icon').addEventListener('click', function() {
+
+const burger =  document.getElementById('burger-icon');
+   links.forEach(link=>{
+  link.addEventListener('click',function(){
+    scrollToSection(link);
+    if(nav.classList.contains('show')){
+    nav.classList.toggle('show');}
+    burger.classList.toggle('active')
+  }
+)
+});
+
+
+       burger.addEventListener('click', function() {
       this.classList.toggle('active');
       nav.classList.toggle('show')
       });
+
+
+
       });
 
       // cards
