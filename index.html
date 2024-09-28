@@ -19,27 +19,32 @@
         <div class="slide">loading</div>
       </div>
     </div>
-    <div class="burger-container">   <div class="burger-icon" id="burger-icon">
+    <div class="burger-container">
+      <div class="burger-icon" id="burger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
 
-      <span></span>
-      <span></span>
-      <span></span>
-  </div></div>
- 
     <nav id="nav">
       <div class="navbar" id="navbar">
-        <div class="logo"><img src="assets/img/logo.png" alt=""></div>
+        <div class="logo"><img src="assets/img/logo.png" alt="" /></div>
         <ul class="nav-list">
-       
           <li class="nav-item">
-            <a id="about"  class="nav-link" onclick="scrollToSection(this)">About</a>
+            <a id="about" class="nav-link" onclick="scrollToSection(this)"
+              >About</a
+            >
           </li>
-          <li  class="nav-item" >
-            <a  id="gal" class="nav-link"onclick="scrollToSection(this)" >Gallery</a>
+          <li class="nav-item">
+            <a id="gal" class="nav-link" onclick="scrollToSection(this)"
+              >Gallery</a
+            >
           </li>
-          <li  class="nav-item">
-            <a   id="contact"  class="nav-link" onclick="scrollToSection(this)">Contact</a>
-           
+          <li class="nav-item">
+            <a id="contact" class="nav-link" onclick="scrollToSection(this)"
+              >Contact</a
+            >
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link dropdown">More <span>&#11167;</span></a>
@@ -49,7 +54,6 @@
               </ul>
             </div>
           </li>
-    
         </ul>
       </div>
     </nav>
@@ -63,14 +67,12 @@
     </div>
     <!-- card  -->
     <div class="container">
-      <div class="section-heading"><h2> Skills </h2></div>
+      <div class="section-heading"><h2>Skills</h2></div>
       <div class="card-container">
         <div class="card active" id="web" onclick="popUp(this.id)">
           <div
             class="card-before"
-            style="
-              background-image: url('/assets/img/web.png');
-            "
+            style="background-image: url('/assets/img/web.png')"
           ></div>
           <div class="card-content">
             <h2 class="card-title">Web Development</h2>
@@ -81,16 +83,14 @@
             like HTML, CSS, JavaScript, and more.
           </div>
           <div class="card-link">
-            <span >More</span>
+            <span>More</span>
           </div>
         </div>
 
-        <div class="card"  id="seo" onclick="popUp(this.id)">
+        <div class="card" id="seo" onclick="popUp(this.id)">
           <div
             class="card-before"
-            style="
-              background-image: url('/assets/img/seo.png');
-            "
+            style="background-image: url('/assets/img/seo.png')"
           ></div>
           <div class="card-content">
             <h2 class="card-title">SEO</h2>
@@ -108,9 +108,7 @@
         <div class="card" id="graphic" onclick="popUp(this.id)">
           <div
             class="card-before"
-            style="
-              background-image: url('/assets/img/graphic.png');
-            "
+            style="background-image: url('/assets/img/graphic.png')"
           ></div>
           <div class="card-content">
             <h2 class="card-title">Graphic Design</h2>
@@ -121,7 +119,7 @@
             other graphics, using tools like Adobe Photoshop and Illustrator.
           </div>
           <div class="card-link">
-            <span >More</span>
+            <span>More</span>
           </div>
         </div>
 
@@ -141,16 +139,31 @@
             from promotional content to instructional materials.
           </div>
           <div class="card-link">
-            <span >More</span>
+            <span>More</span>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- experience  -->
+
+    <div class="container">
+      <div class="exp-wrapper">
+        <div class="experience-section">
+          <div id="exp-target" class="section-heading">
+            <h2>Proffesional Experience</h2>
+          </div>
+          <div id="company-list" class="company-list"></div>
+        </div>
+      </div>
+    </div>
     <!-- sliding divs  -->
     <div class="box">
-      <div class="inner-box " style="background-image: url('assets/img/bg2.jpg');">
-        <div id="about-target" class="section-heading"><h2>About Me </h2></div>
+      <div
+        class="inner-box"
+        style="background-image: url('assets/img/bg2.jpg')"
+      >
+        <div id="about-target" class="section-heading"><h2>About Me</h2></div>
       </div>
       <div class="box-container" id="box-container">
         <div class="box1 box-item">
@@ -198,480 +211,89 @@
 
     <div id="modal-container" style="display: none"></div>
 
-
-
-<!-- gallery  -->
- <!-- sort  -->
- <div id="gal-target" class="section-heading"><h2>Gallery</h2></div>
- <section class="sort-container">
-  <div class="sort">
-     <div class ="sort-btn" id="all" onclick="displayImages(this)">All</div>
-     <div class ="sort-btn" id="web" onclick="displayImages(this)">Web</div>
-     <div class ="sort-btn" id="print" onclick="displayImages(this)">Print</div>
-     <div class ="sort-btn" id="illustration" onclick="displayImages(this)">Illustrations</div>
-  </div></section>
-<!-- container -->
- <div class="container-gallery">
-
- </div>
-
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox">
- <span class="close">&times;</span>
- <img class="lightbox-content" id="lightbox-image">
-</div>
-<!-- footer  -->
-
-<div class="container">
-<div id="contact-target" class="section-heading"><h2> Contact </h2></div>
-
-<div class="holder">
-  <a href="mailto:arjunsuresh858@gmail.com" class="sort-btn">arjunsuresh858@gmail.com</a>
-
-</div>
-</div>
-
-
-<style>
-  .holder{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .holder a {
-    margin: 20px;
-    text-decoration: none;
-    /* font-size: 2rem; */
-    color: #ce5a5a;
-  }
-</style>
-<footer>
-  <section>
-<div class="footer-row">
-  <div class="col"><h6>Link</h6><ul>
-    <li><a href="#">home</a></li>
-    <li><a href="#">home</a></li>
-    <li><a href="#">home</a></li>
-
-  </ul></div>
-  <div class="col"><h6>Link</h6><ul>
-    <li><a href="#">home</a></li>
-  </ul></div>
-  <div class="col"><h6>Link</h6><ul>
-    <li><a href="#">home</a></li>
-  </ul></div>
-
-</div>
-  </section>
-  <div id="copyright"></div>
-</footer>
-<div id="up-btn">up</div>
-
-    <script>
-y = new Date().getFullYear();
-
-document.getElementById('copyright').innerHTML =`&copy ${y} | Arjun Suresh`
-
-const nav = document.getElementById("nav");
-
-
-const links = document.querySelectorAll('.nav-link');
-
-
-
-
-      function popUp(card) {
-        let content;
-        switch (card) {
-          case "web":
-            bg =
-              "https://png.pngtree.com/background/20231030/original/pngtree-bold-and-dynamic-3d-illustration-of-black-and-red-abstract-technology-picture-image_5786699.jpg";
-
-            content = {
-              description:
-                "A highly skilled web developer with over 2 years of experience in building responsive and dynamic web applications. Proficient in front-end and back-end technologies, with a strong focus on modern JavaScript frameworks, API integration, and database management. Adept at using a wide range of tools to streamline development workflows and ensure high-quality code delivery.",
-              skills: [
-                "HTML",
-                "CSS",
-                "JavaScript",
-                "API",
-                "PHP",
-                "MySQL",
-                "React",
-                "Node.js",
-              ],
-              experience: "2+",
-              tools: [
-                "VS Code",
-                "CPanel",
-                "phpMyAdmin",
-                "FileZilla",
-                "Postman",
-                "Git",
-                "Docker",
-                "Webpack",
-                "Babel",
-              ],
-              featuredImage: "assets/img/laptop.png",
-            };
-            break;
-          case "seo":
-            bg =
-              "https://c0.wallpaperflare.com/preview/187/945/117/black-and-red-laptop-keyboard.jpg";
-
-            content = {
-              description:
-                "An experienced SEO specialist with a strong background in optimizing websites to achieve higher search engine rankings and increase organic traffic. Proficient in keyword research, on-page optimization, link building, and technical SEO. Skilled at analyzing data and implementing strategies that drive measurable results.",
-              skills: [
-                "Keyword Research",
-                "On-Page SEO",
-                "Technical SEO",
-                "Link Building",
-                "Content Optimization",
-                "Google Analytics",
-                "SEO Audits",
-                "Competitor Analysis",
-              ],
-              experience: "3+ years",
-              tools: [
-                "Google Analytics",
-                "Google Search Console",
-                "SEMrush",
-                "Ahrefs",
-                "Moz",
-                "Yoast SEO",
-                "Screaming Frog",
-                "Keyword Planner",
-                "SurferSEO",
-                "Google Tag Manager",
-              ],
-            };
-            break;
-          case "graphic":
-            bg =
-              "https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/01/Google-Wallpapers-00047.png";
-
-            content = {
-              description:
-                "A creative and detail-oriented graphic designer experienced in creating visually compelling designs for digital and print media. Skilled in translating client ideas into unique and impactful designs. Proficient in using industry-standard design software to produce high-quality work that meets branding and marketing goals.",
-              skills: [
-                "Adobe Photoshop",
-                "Adobe Illustrator",
-                "Adobe InDesign",
-                "Typography",
-                "Branding",
-                "Logo Design",
-                "Print Design",
-                "UI/UX Design",
-                "Color Theory",
-                "Visual Communication",
-              ],
-              experience: "4+ years",
-              tools: [
-                "Adobe Creative Suite",
-                "Sketch",
-                "Figma",
-                "CorelDRAW",
-                "Canva",
-                "Procreate",
-                "Wacom Tablet",
-                "Microsoft PowerPoint",
-                "Affinity Designer",
-                "Adobe XD",
-              ],
-            };
-            break;
-          case "video":
-            bg =
-              "https://img.freepik.com/free-vector/realistic-background-futuristic-style_23-2149129125.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1723939200&semt=ais_hybrid";
-            break;
-          default:
-            // Optional: you can define a default background in case no case matches
-            bg = "";
-            break;
-        }
-
-        const skills = content.skills
-          .map((skill) => `<div class="info-tag">${skill}</div>`)
-          .join("");
-
-        const tools = content.tools
-          .map((tool) => `<div class="info-tag">${tool}</div>`)
-          .join("");
-
-        const modal = `<div class="modal" style="background-image:url(${bg})">
-      <span class="close-btn">&times;</span>
-
-       <section class="info-skills">
-        <div class = "col1">  <div class="discription">${content.description}</div>
-     <div class="skill-title"><h5>Skills I have</h5> </div> 
-      <div class="skills">
-        
-      ${skills}      
-      </div>     
-     <div class="skill-title"><h5>Tools I use</h5> </div> 
-      <div class="tools">
-   
-        ${tools} 
-       </div></div>
-         <div class = "col2"><img src="${content.featuredImage}" alt=""></div>
-    
+    <!-- gallery  -->
+    <!-- sort  -->
+    <div id="gal-target" class="section-heading"><h2>Gallery</h2></div>
+    <section class="sort-container">
+      <div class="sort">
+        <div class="sort-btn" id="all" onclick="displayImages(this)">All</div>
+        <div class="sort-btn" id="web" onclick="displayImages(this)">Web</div>
+        <div class="sort-btn" id="print" onclick="displayImages(this)">
+          Print
+        </div>
+        <div class="sort-btn" id="illustration" onclick="displayImages(this)">
+          Illustrations
+        </div>
+      </div>
     </section>
-    </div>`;
+    <!-- container -->
+    <div class="container-gallery"></div>
 
-        const modalContainer = document.getElementById("modal-container");
-        modalContainer.innerHTML = modal;
-        document.body.classList.add("lock-scroll");
-        modalContainer.style.display = "block";
-        const closeBtn = document.querySelector(".close-btn");
-        if (closeBtn) {
-          closeBtn.addEventListener("click", () => {
-            modalContainer.style.display = "none";
-            document.body.classList.remove("lock-scroll");
-          });
-        }
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-image" />
+    </div>
+    <!-- footer  -->
+
+    <div class="container">
+      <div id="contact-target" class="section-heading"><h2>Contact</h2></div>
+
+      <div class="holder">
+        <a href="mailto:arjunsuresh858@gmail.com" class="sort-btn"
+          >arjunsuresh858@gmail.com</a
+        >
+      </div>
+    </div>
+
+    <style>
+      .holder {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
       }
-      document.addEventListener("DOMContentLoaded", () => {
-        const loader = document.getElementById("loader");
 
-        const navbar = document.getElementById("navbar");
-        const hi = document.querySelector(".slide");
-
-        hi.classList.add("active");
-        document.body.classList.add("lock-scroll");
-        // Hide loader after 10 seconds
-        setTimeout(() => {
-          loader.style.height = "0px";
-          loader.style.opacity = "0";
-        }, 3000);
-
-        // Show and animate navbar after 11 seconds
-        setTimeout(() => {
-          navbar.style.opacity = "1";
-          navbar.style.transform = "translateY(0)";
-          document.body.classList.remove("lock-scroll");
-        }, 4000);
-        ///////scroll box
-
-const burger =  document.getElementById('burger-icon');
-   links.forEach(link=>{
-  link.addEventListener('click',function(){
-    scrollToSection(link);
-    if(nav.classList.contains('show')){
-    nav.classList.toggle('show');}
-    burger.classList.toggle('active')
-  }
-)
-});
-
-
-       burger.addEventListener('click', function() {
-      this.classList.toggle('active');
-      nav.classList.toggle('show')
-      });
-
-
-
-      });
-
-      // cards
-
-      // const cards = document.querySelectorAll(".card");
-
-      // cards.forEach((card) => {
-      //   card.addEventListener("click", () => {
-      //     if (card.classList.contains("active-fullscreen")) {
-      //       card.classList.remove("active-fullscreen");
-      //       document.body.style.overflowY = "scroll";
-      //     } else {
-      //       document
-      //         .querySelectorAll(".card")
-      //         .forEach((c) => c.classList.remove("active-fullscreen"));
-      //       card.classList.add("active-fullscreen");
-      //       document.body.style.overflowY = "hidden";
-      //     }
-      //   });
-      // });
-
-      //       const boxContainer = document.querySelector('.box');
-
-      // boxContainer.addEventListener('mousemove', (e) => {
-      //     const { offsetWidth: width, offsetHeight: height } = boxContainer;
-      //     const { clientX: x, clientY: y } = e;
-
-      //     // Calculate the position of the mouse inside the boxContainer
-      //     const moveX = ((x / width) - 0.5) * 30;
-      //     const moveY = ((y / height) - 0.5) * -30;
-
-      //     // Apply the transform to each box-item
-      //     const boxItems = document.querySelectorAll('.box-item');
-      //     boxItems.forEach(box => {
-      //         box.style.transform = `rotateY(${moveX}deg) rotateX(${moveY}deg)`;
-      //     });
-      // });
-
-      // boxContainer.addEventListener('mouseleave', () => {
-      //     const boxItems = document.querySelectorAll('.box-item');
-      //     boxItems.forEach(box => {
-      //         box.style.transform = 'rotateY(0deg) rotateX(0deg)';
-      //     });
-      // });
-    </script>
-<script>
-function displayImages(item) {
-    const images = [
-        { id: 1, src: 'img/portfolio/2972660 copy-min.jpg', category: 'print' },
-        { id: 2, src: 'img/portfolio/christmas-min.jpg', category: 'web' },
-        { id: 3, src: 'img/portfolio/onamfest-min.jpg', category: 'print' },
-        { id: 4, src: 'img/portfolio/dbtp1.jpg', category: 'print' },
-        { id: 5, src: 'img/portfolio/dbtp2.jpg', category: 'print' },
-        { id: 6, src: 'img/portfolio/instagram-min.jpg', category: 'web' },
-        { id: 7, src: 'img/portfolio/KS billboard-min.jpg', category: 'web' },
-        { id: 8, src: 'img/portfolio/muthoot flyer -min.jpg', category: 'print' },
-        { id: 9, src: 'img/portfolio/shoe1.jpg', category: 'print' },
-        { id: 10, src: 'img/portfolio/martian.jpg', category: 'illustration' },
-        { id: 11, src: 'img/portfolio/jalamarmaram.jpg', category: 'print' },
-        { id: 12, src: 'img/portfolio/LOGOS.jpg', category: 'illustration' },
-        { id: 13, src: 'img/portfolio/cat illustration.jpeg', category: 'illustration' },
-        { id: 14, src: 'img/portfolio/Timesup.jpg', category: 'web' },
-        { id: 15, src: 'img/portfolio/lush.jpg', category: 'print' },
-        { id: 16, src: 'img/portfolio/lush2.jpg', category: 'print' },
-        { id: 17, src: 'img/portfolio/merry.jpg', category: 'illustration' },
-        { id: 18, src: 'img/portfolio/dance-illustration.jpg', category: 'illustration' },
-        { id: 19, src: 'img/portfolio/cowin.jpg', category: 'print' },
-        { id: 20, src: 'img/portfolio/ali.jpg', category: 'print' },
-        { id: 21, src: 'img/portfolio/carwash-min.PNG', category: 'print' },
-        { id: 22, src: 'img/portfolio/Curio.jpg', category: 'web' },
-        { id: 23, src: 'img/portfolio/instagram2.jpg', category: 'web' },
-        { id: 24, src: 'img/portfolio/dpharm.jpg', category: 'web' },
-        { id: 25, src: 'img/portfolio/tiger.jpg', category: 'illustration' },
-        { id: 26, src: 'img/portfolio/budda-min.PNG', category: 'web' },
-        { id: 27, src: 'img/portfolio/groovadd.jpg', category: 'web' },
-        { id: 28, src: 'img/portfolio/budda2.jpg', category: 'web' },
-        { id: 29, src: 'img/portfolio/moto ad.jpg', category: 'web' },
-        { id: 30, src: 'img/portfolio/Menucover.jpeg', category: 'print' },
-    ];
-
-    let processedImages = images;
-
-    if (item !== undefined ) {
-        if(item.id !== "all"){
-            processedImages = images.filter(function(image) {
-            return image.category === item.id;
-        });
-        }
-        
-        document.querySelectorAll('.sort-btn').forEach((btn)=>{
-            if(btn.id == item.id){
-                btn.classList.add('active');
-            }else{
-                btn.classList.remove('active');
-            }
-        })
-
-
-    }
-
-    const imageElement = processedImages.map((image) =>
-        `<div class="${image.category}">
-            <img src="assets/${image.src}" alt="Image ${image.id}" class="image-item" loading="lazy"/>
-        </div>`
-    ).join("");
-
-    const container = document.querySelector('.container-gallery');
-    container.innerHTML = imageElement;
-
-    // Lightbox functionality
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    const closeBtn = document.querySelector('.close');
-
-    document.querySelectorAll('.image-item').forEach(item => {
-        item.addEventListener('click', function () {
-            lightbox.style.display = 'block';
-            lightboxImage.src = this.src;
-        });
-    });
-
-    closeBtn.onclick = function() {
-        lightbox.style.display = 'none';
-
-
-    }
-
-    // Close lightbox when clicking outside of the image
-    lightbox.onclick = function(event) {
-        if (event.target === lightbox) {
-            lightbox.style.display = 'none';
-        }
-    }
-}
-
-
-
-
-  
-function scrollToSection(item){
-  const target = document.getElementById(item.id + "-target");
-  if (target) {
-    target.scrollIntoView({
-      behavior: 'smooth'
-    });
-  }
-}
-var ubBtn = document.getElementById('up-btn');
-ubBtn.addEventListener('click',()=>{
-  scrollTo({
-    top: 0 ,
-    behavior:"smooth"
-  })
-})
-
-
-window.addEventListener('scroll',function(){
-  scrollValue = pageYOffset;
-  if(scrollValue > 300){
-    ubBtn.classList.add('active');
-  }else{
-    ubBtn.classList.remove('active');
-
-  }
-})
-document.addEventListener("DOMContentLoaded", function () {
-  const lazyImages = document.querySelectorAll("img[loading='lazy']");
-
-  const lazyLoad = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.classList.add("loaded");
-        observer.unobserve(img);
+      .holder a {
+        margin: 20px;
+        text-decoration: none;
+        /* font-size: 2rem; */
+        color: #ce5a5a;
       }
-    });
-  };
+    </style>
+    <footer>
+      <section>
+        <div class="footer-row">
+          <div class="col">
+            <h6>Link</h6>
+            <ul>
+              <li><a href="#">home</a></li>
+              <li><a href="#">home</a></li>
+              <li><a href="#">home</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h6>Link</h6>
+            <ul>
+              <li><a href="#">home</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h6>Link</h6>
+            <ul>
+              <li><a href="#">home</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div id="copyright"></div>
+    </footer>
+    <div id="up-btn">up</div>
 
-  const observer = new IntersectionObserver(lazyLoad, {
-    rootMargin: "0px 0px 300px 0px",
-  });
-
-  lazyImages.forEach((img) => {
-    observer.observe(img);
-  });
-
-
-  var el = document.getElementById('all');
-  displayImages(el);
-});
-
-
-
-
-
-    </script>
-    
+    <script src="./assets/js/loading.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/gallery.js"></script>
+    <script src="./assets/js/experience.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   </body>
 </html>

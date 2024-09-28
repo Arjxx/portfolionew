@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Experience Section</title>
+  </head>
+  <body>
+    <section class="experience-section">
+      <h2>Professional Experience</h2>
+      <div id="company-list" class="company-list"></div>
+    </section>
+
+    <style>
+      /* styles.css */
+      /* styles.css */
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: black;
+      }
+
+      .experience-section {
+        /* background-color: #270003; */
+        border-radius: 10px;
+        padding: 20px 40px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 60%;
+      }
+
+      .experience-section h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+      }
+
+      .company-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .company {
+        /* background-color: #360408; */
+        /* border-left: 4px solid red; */
+        padding: 15px;
+        /* border-radius: 5px; */
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .company:hover {
+        transform: translateY(-3px);
+        /* box-shadow: 0 6px 6px rgba(196, 8, 8, 0.2); */
+        /* border: 1px solid red; */
+        /* box-shadow: rgba(196, 8, 8, 0.2) 0px 7px 29px 0px; */
+        box-shadow: rgba(240, 46, 46, 0.4) -5px 5px,
+          rgba(240, 46, 46, 0.3) -10px 10px, rgba(240, 46, 46, 0.2) -15px 15px,
+          rgba(240, 46, 46, 0.1) -20px 20px, rgba(240, 46, 46, 0.05) -25px 25px;
+      }
+
+      .company-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+
+      .company h3 {
+        font-size: 1.2rem;
+        margin: 0;
+        color: #fff;
+      }
+
+      .role {
+        /* background-color: #ce5a5a; */
+        color: #fff;
+        padding: 2px 10px;
+        border-radius: 15px;
+        border: 1px solid #ce5a5a;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+      }
+
+      .tenure {
+        color: #555;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .experience-section {
+          width: 100%;
+          padding: 20px;
+        }
+
+        .company {
+          padding: 10px;
+        }
+
+        .company-header h3 {
+          font-size: 1rem;
+        }
+
+        .role {
+          font-size: 0.8rem;
+        }
+
+        .tenure {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+
+    <script>
+        exp()
+      function exp() {
+        const exp = [
+          {
+            company: "ICubics Technologies",
+            tenure: "2022- Present",
+            role: "Web Developer",
+          },
+          {
+            company: "ICubics Technologies",
+            tenure: "2022- Present",
+            role: "Web Developer",
+          },
+          {
+            company: "ICubics Technologies",
+            tenure: "2022- Present",
+            role: "Web Developer",
+          },
+          {
+            company: "ICubics Technologies",
+            tenure: "2022- Present",
+            role: "Web Developer",
+          },
+        ];
+
+        const list = document.getElementById("company-list");
+        const item = exp
+          .map(
+            (e) => `<div class="company">
+                <div class="company-header">
+                    <h3>${e.company}</h3>
+                    <span class="role">${e.role}</span>
+                </div>
+                <p class="tenure">${e.tenure}</p>
+            </div>`
+          )
+          .join("");
+        list.innerHTML = item;
+      }
+    </script>
+  </body>
+</html>
