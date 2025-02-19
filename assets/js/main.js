@@ -182,3 +182,22 @@ window.addEventListener("scroll", function () {
     ubBtn.classList.remove("active");
   }
 });
+
+
+///////burger icon
+
+const burger = document.getElementById("burger-icon");
+links.forEach((link) => {
+  link.addEventListener("click", function () {
+    scrollToSection(link);
+    if (nav.classList.contains("show")) {
+      nav.classList.toggle("show");
+    }
+    burger.classList.toggle("active");
+  });
+});
+
+burger.addEventListener("click", function () {
+  this.classList.toggle("active");
+  nav.classList.toggle("show");
+});
