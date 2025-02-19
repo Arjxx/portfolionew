@@ -35,8 +35,8 @@ function popUp(card) {
           "Postman",
           "Git",
           "Docker",
-          "Webpack",
-          "Babel",
+          // "Webpack",
+          // "Babel",
         ],
         featuredImage: "assets/img/laptop.png",
       };
