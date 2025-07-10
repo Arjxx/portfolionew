@@ -32,6 +32,7 @@ function displayImages(item) {
       { id: 1, src: "img/portfolio/2972660 copy-min.jpg", category: "print" },
       { id: 2, src: "img/portfolio/christmas-min.jpg", category: "web" },
       { id: 3, src: "img/portfolio/onamfest-min.jpg", category: "print" },
+      { id: 3, src: "img/portfolio/New Project.jpg", category: "print" },
       { id: 4, src: "img/portfolio/dbtp1.jpg", category: "print" },
       { id: 5, src: "img/portfolio/dbtp2.jpg", category: "print" },
       { id: 6, src: "img/portfolio/instagram-min.jpg", category: "web" },
