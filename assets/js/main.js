@@ -83,6 +83,8 @@ function popUp(card) {
         skills: [
           "Adobe Photoshop",
           "Adobe Illustrator",
+          "Adobe Premier Pro",
+          "Adobe After Effects ",
           "Adobe InDesign",
           "Typography",
           "Branding",
@@ -101,8 +103,7 @@ function popUp(card) {
           "Canva",
           "Procreate",
           "Wacom Tablet",
-          "Microsoft PowerPoint",
-          "Affinity Designer",
+          "Microsoft PowerPoint",          
           "Adobe XD",
         ],
       };
