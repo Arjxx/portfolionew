@@ -59,7 +59,7 @@ function displayImages(item) {
       { id: 28, src: "img/portfolio/budda2.jpg", category: "web" },
       { id: 29, src: "img/portfolio/moto ad.jpg", category: "web" },
       { id: 30, src: "img/portfolio/Menucover.jpeg", category: "print" },
-      { id: 30, src: "img/portfolio/dewali3-min.png", category: "print" },
+      { id: 30, src: "img/portfolio/dewali3-min.png", category: "print" }
     ];
   
     let processedImages = images;
