@@ -20,6 +20,7 @@ function popUp(card) {
           "HTML",
           "CSS",
           "JavaScript",
+          "Python",
           "API",
           "PHP",
           "MySQL",
@@ -29,6 +30,9 @@ function popUp(card) {
         experience: "2+",
         tools: [
           "VS Code",
+          "Linux",
+          "Cloud"
+          "Bash"
           "CPanel",
           "phpMyAdmin",
           "FileZilla",
