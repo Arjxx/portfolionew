@@ -49,7 +49,7 @@ function displayImages(item) {
       {id: 18, src: "img/portfolio/dance-illustration.jpg",category: "illustration",},
       { id: 19, src: "img/portfolio/cowin.jpg", category: "print" },
       { id: 20, src: "img/portfolio/ali.jpg", category: "print" },
-      { id: 21, src: "img/portfolio/carwash-min.PNG", category: "print" },
+      { id: 21, src: "img/portfolio/carwash-min.png", category: "print" },
       { id: 22, src: "img/portfolio/curio.jpg", category: "web" },
       { id: 23, src: "img/portfolio/instagram2.jpg", category: "web" },
       { id: 24, src: "img/portfolio/dpharm.jpg", category: "web" },
