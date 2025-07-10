@@ -31,8 +31,8 @@ function popUp(card) {
         tools: [
           "VS Code",
           "Linux",
-          "Cloud"
-          "Bash"
+          "Cloud",
+          "Bash",
           "CPanel",
           "phpMyAdmin",
           "FileZilla",
